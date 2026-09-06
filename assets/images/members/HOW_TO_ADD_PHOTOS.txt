@@ -1,0 +1,27 @@
+========================================================================
+HOW TO ADD CUSTOM MEMBER PHOTOS
+========================================================================
+
+Whenever you are ready with the actual photos of your committee members:
+
+1. Recommended photo specifications:
+   - Square format (e.g., 400x400 pixels or 500x500 pixels)
+   - JPG or PNG format
+
+2. Simply save/copy your images into this folder:
+   d:\Puja Website\assets\images\members\
+
+3. Name the files according to each member role:
+   - president.jpg       -> For President (Debabrata Roy)
+   - secretary.jpg       -> For General Secretary (Anirban Mukherjee)
+   - cultural-head.jpg   -> For Cultural Secretary (Sutapa Sengupta)
+   - treasurer.jpg       -> For Treasurer & Finance (Sourav Ganguly)
+
+4. If you add new members or use different file names, open:
+   d:\Puja Website\index.html
+   and locate the "Puja Samiti & Committee" section.
+   Update the src="assets/images/members/your_photo_name.jpg".
+
+NOTE:
+If a photo is not added yet, the website will automatically show
+the stylish festive golden silhouette avatar (default-avatar.svg)!
