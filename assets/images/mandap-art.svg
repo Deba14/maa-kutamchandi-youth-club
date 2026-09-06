@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGlow" cx="50%" cy="55%" r="65%">
+      <stop offset="0%" stop-color="#3B0710" />
+      <stop offset="50%" stop-color="#1A0408" />
+      <stop offset="100%" stop-color="#080C16" />
+    </radialGradient>
+
+    <!-- Gold Gradients -->
+    <linearGradient id="goldGleam" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF3BF" />
+      <stop offset="35%" stop-color="#F59E0B" />
+      <stop offset="70%" stop-color="#D97706" />
+      <stop offset="100%" stop-color="#92400E" />
+    </linearGradient>
+
+    <linearGradient id="crimsonGleam" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#B91C1C" />
+      <stop offset="100%" stop-color="#58080C" />
+    </linearGradient>
+
+    <radialGradient id="diyaGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FDE68A" stop-opacity="1" />
+      <stop offset="40%" stop-color="#F59E0B" stop-opacity="0.8" />
+      <stop offset="70%" stop-color="#EF4444" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#EF4444" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Festive Garland Pattern -->
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGlow)" />
+
+  <!-- Stars / Festive Sparkles -->
+  <g fill="#FDE68A" opacity="0.6">
+    <circle cx="120" cy="80" r="2" />
+    <circle cx="220" cy="130" r="1.5" />
+    <circle cx="340" cy="70" r="2.5" />
+    <circle cx="460" cy="70" r="2.5" />
+    <circle cx="580" cy="130" r="1.5" />
+    <circle cx="680" cy="80" r="2" />
+    <circle cx="150" cy="220" r="1.5" />
+    <circle cx="650" cy="220" r="1.5" />
+  </g>
+
+  <!-- Festive Hanging Toran / Floral Garlands -->
+  <path d="M 0 30 Q 100 80, 200 30 Q 300 80, 400 30 Q 500 80, 600 30 Q 700 80, 800 30" fill="none" stroke="#D97706" stroke-width="4" stroke-dasharray="8,6" />
+  <path d="M 0 50 Q 100 100, 200 50 Q 300 100, 400 50 Q 500 100, 600 50 Q 700 100, 800 50" fill="none" stroke="#B91C1C" stroke-width="2.5" />
+
+  <!-- Hanging Marigold Bells -->
+  <g fill="#F59E0B">
+    <circle cx="100" cy="80" r="7" />
+    <circle cx="300" cy="80" r="7" />
+    <circle cx="500" cy="80" r="7" />
+    <circle cx="700" cy="80" r="7" />
+    <circle cx="200" cy="50" r="5" fill="#EF4444" />
+    <circle cx="400" cy="50" r="5" fill="#EF4444" />
+    <circle cx="600" cy="50" r="5" fill="#EF4444" />
+  </g>
+
+  <!-- Grand Mandap Outer Arch -->
+  <path d="M 120 540 L 120 280 C 120 120, 680 120, 680 280 L 680 540 Z" fill="none" stroke="url(#goldGleam)" stroke-width="6" opacity="0.4" />
+
+  <!-- Pillars Left & Right -->
+  <rect x="140" y="240" width="34" height="300" rx="4" fill="url(#crimsonGleam)" stroke="url(#goldGleam)" stroke-width="2" />
+  <rect x="626" y="240" width="34" height="300" rx="4" fill="url(#crimsonGleam)" stroke="url(#goldGleam)" stroke-width="2" />
+
+  <!-- Pillar Cap & Base Details -->
+  <rect x="130" y="228" width="54" height="16" rx="3" fill="url(#goldGleam)" />
+  <rect x="130" y="530" width="54" height="18" rx="3" fill="url(#goldGleam)" />
+  <rect x="616" y="228" width="54" height="16" rx="3" fill="url(#goldGleam)" />
+  <rect x="616" y="530" width="54" height="18" rx="3" fill="url(#goldGleam)" />
+
+  <!-- Inner Sacred Arch -->
+  <path d="M 174 530 L 174 270 Q 400 130, 626 270 L 626 530" fill="none" stroke="url(#goldGleam)" stroke-width="5" />
+
+  <!-- Arch Ornaments (Lotus Crest) -->
+  <g transform="translate(400, 160)">
+    <path d="M 0 -45 Q -25 -10, 0 10 Q 25 -10, 0 -45 Z" fill="url(#goldGleam)" />
+    <path d="M -15 -35 Q -38 -15, -15 10 Q 5 -5, -15 -35 Z" fill="url(#goldGleam)" opacity="0.85" />
+    <path d="M 15 -35 Q 38 -15, 15 10 Q -5 -5, 15 -35 Z" fill="url(#goldGleam)" opacity="0.85" />
+    <circle cx="0" cy="18" r="8" fill="#F59E0B" />
+  </g>
+
+  <!-- Central Sanctum Aura Glow -->
+  <circle cx="400" cy="330" r="150" fill="url(#diyaGlow)" opacity="0.55" filter="url(#softGlow)" />
+
+  <!-- Kalash & Coconut at top of Altar -->
+  <g transform="translate(400, 240)">
+    <!-- Kalash Base -->
+    <path d="M -22 30 C -30 15, -28 -5, 0 -8 C 28 -5, 30 15, 22 30 Z" fill="url(#goldGleam)" stroke="#B45309" stroke-width="1.5" />
+    <!-- Mango Leaves -->
+    <path d="M 0 -8 L -24 -25 Q -10 -20, 0 -8 Z" fill="#15803D" />
+    <path d="M 0 -8 L 24 -25 Q 10 -20, 0 -8 Z" fill="#15803D" />
+    <path d="M 0 -8 L 0 -32 Q 5 -20, 0 -8 Z" fill="#16A34A" />
+    <!-- Coconut -->
+    <circle cx="0" cy="-14" r="11" fill="#78350F" />
+    <circle cx="0" cy="-14" r="3" fill="#F59E0B" />
+  </g>
+
+  <!-- Deity Sacred Pedestal (Peetha) -->
+  <rect x="270" y="380" width="260" height="28" rx="6" fill="url(#goldGleam)" stroke="#78350F" stroke-width="2" />
+  <rect x="290" y="408" width="220" height="36" rx="4" fill="url(#crimsonGleam)" stroke="url(#goldGleam)" stroke-width="2" />
+  <rect x="250" y="444" width="300" height="30" rx="8" fill="url(#goldGleam)" />
+
+  <!-- Sacred Grand Diya on Pedestal -->
+  <g transform="translate(400, 368)">
+    <!-- Diya Brass Bowl -->
+    <path d="M -42 0 C -42 16, -18 24, 0 24 C 18 24, 42 16, 42 0 Z" fill="url(#goldGleam)" stroke="#92400E" stroke-width="2" />
+    <ellipse cx="0" cy="0" rx="42" ry="8" fill="#B45309" />
+    
+    <!-- Diya Flame -->
+    <circle cx="0" cy="-24" r="28" fill="url(#diyaGlow)" opacity="0.9" />
+    <path d="M 0 -48 C 12 -32, 10 -10, 0 0 C -10 -10, -12 -32, 0 -48 Z" fill="#F59E0B" />
+    <path d="M 0 -40 C 6 -28, 5 -12, 0 0 C -5 -12, -6 -28, 0 -40 Z" fill="#FFFBEB" />
+  </g>
+
+  <!-- Side Diyas on Stands -->
+  <g transform="translate(220, 480)">
+    <path d="M -18 0 C -18 8, -8 12, 0 12 C 8 12, 18 8, 18 0 Z" fill="url(#goldGleam)" />
+    <path d="M 0 -18 C 6 -12, 4 -4, 0 0 C -4 -4, -6 -12, 0 -18 Z" fill="#F59E0B" />
+    <circle cx="0" cy="-8" r="10" fill="url(#diyaGlow)" opacity="0.7" />
+  </g>
+  <g transform="translate(580, 480)">
+    <path d="M -18 0 C -18 8, -8 12, 0 12 C 8 12, 18 8, 18 0 Z" fill="url(#goldGleam)" />
+    <path d="M 0 -18 C 6 -12, 4 -4, 0 0 C -4 -4, -6 -12, 0 -18 Z" fill="#F59E0B" />
+    <circle cx="0" cy="-8" r="10" fill="url(#diyaGlow)" opacity="0.7" />
+  </g>
+
+  <!-- Rangoli Base Floor Pattern -->
+  <ellipse cx="400" cy="530" rx="280" ry="35" fill="none" stroke="url(#goldGleam)" stroke-width="2" opacity="0.4" />
+  <ellipse cx="400" cy="530" rx="200" ry="24" fill="none" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.5" />
+
+  <!-- Bottom Sacred Inscription Banner -->
+  <text x="400" y="580" text-anchor="middle" font-family="'Anek Odia', sans-serif" font-size="20" font-weight="700" fill="#FDE68A" letter-spacing="2">
+    ॥ ଶ୍ରୀ ମା' କୁଟାମଚଣ୍ଡୀ ପ୍ରସନ୍ନ ॥
+  </text>
+</svg>

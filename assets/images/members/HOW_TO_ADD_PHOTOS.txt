@@ -15,11 +15,11 @@ Whenever you are ready with the actual photos of your committee members:
    - president.jpg       -> For President (Debabrata Roy)
    - secretary.jpg       -> For General Secretary (Anirban Mukherjee)
    - cultural-head.jpg   -> For Cultural Secretary (Sutapa Sengupta)
-   - treasurer.jpg       -> For Treasurer & Finance (Sourav Ganguly)
+   - treasurer.jpg       -> For Treasurer & Finance (Abinash Sahoo)
 
 4. If you add new members or use different file names, open:
    d:\Puja Website\index.html
-   and locate the "Puja Samiti & Committee" section.
+   and locate the "Maa Kutamchandi youth Club Committee" section.
    Update the src="assets/images/members/your_photo_name.jpg".
 
 NOTE:

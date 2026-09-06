@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <!-- Background Shield Gradient -->
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B1118" />
+      <stop offset="50%" stop-color="#58080C" />
+      <stop offset="100%" stop-color="#1B0407" />
+    </linearGradient>
+
+    <!-- Gold Gradients -->
+    <linearGradient id="goldRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFBEB" />
+      <stop offset="40%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#B45309" />
+    </linearGradient>
+
+    <!-- Cricket Bat Wood Gradient -->
+    <linearGradient id="batWood" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FED7AA" />
+      <stop offset="50%" stop-color="#FDBA74" />
+      <stop offset="100%" stop-color="#C2410C" />
+    </linearGradient>
+
+    <linearGradient id="batGrip" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="50%" stop-color="#60A5FA" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+
+    <!-- Volleyball Gradient -->
+    <linearGradient id="ballShade" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#F1F5F9" />
+      <stop offset="100%" stop-color="#94A3B8" />
+    </linearGradient>
+
+    <linearGradient id="flameGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#EF4444" />
+      <stop offset="50%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#FEF08A" />
+    </linearGradient>
+  </defs>
+
+  <!-- Circular Outer Crest Shield -->
+  <circle cx="50" cy="50" r="48" fill="url(#shieldGrad)" stroke="url(#goldRim)" stroke-width="3" />
+  <circle cx="50" cy="50" r="44" fill="none" stroke="rgba(245, 158, 11, 0.4)" stroke-width="1" stroke-dasharray="3,2" />
+
+  <!-- Top Divine Blessing Flame (Maa Kutamchandi Shakti & Youth Energy) -->
+  <g transform="translate(50, 16)">
+    <path d="M 0 -10 C 6 -3, 5 5, 0 8 C -5 5, -6 -3, 0 -10 Z" fill="url(#flameGrad)" />
+    <path d="M 0 -5 C 3 -1, 2 4, 0 6 C -2 4, -3 -1, 0 -5 Z" fill="#FFFBEB" />
+  </g>
+
+  <!-- Crossed Cricket Bat (Angled from top-left to bottom-right) -->
+  <g transform="rotate(-32 50 50)">
+    <!-- Bat Handle Grip -->
+    <rect x="47" y="14" width="6" height="24" rx="2.5" fill="url(#batGrip)" stroke="#1E3A8A" stroke-width="0.8" />
+    <!-- Handle Wrap Ribs -->
+    <line x1="47" y1="19" x2="53" y2="19" stroke="#93C5FD" stroke-width="0.7" />
+    <line x1="47" y1="24" x2="53" y2="24" stroke="#93C5FD" stroke-width="0.7" />
+    <line x1="47" y1="29" x2="53" y2="29" stroke="#93C5FD" stroke-width="0.7" />
+    <line x1="47" y1="34" x2="53" y2="34" stroke="#93C5FD" stroke-width="0.7" />
+
+    <!-- Bat Shoulder & Blade -->
+    <path d="M 46 38 Q 44 42, 43 46 L 43 84 Q 43 88, 50 88 Q 57 88, 57 84 L 57 46 Q 56 42, 54 38 Z" fill="url(#batWood)" stroke="#9A3412" stroke-width="1" />
+    <!-- Bat Sweet-Spot Grain Spine -->
+    <line x1="50" y1="46" x2="50" y2="82" stroke="#EA580C" stroke-width="1.2" opacity="0.6" stroke-linecap="round" />
+    <!-- Bat Colored Tip -->
+    <path d="M 43 78 L 43 84 Q 43 88, 50 88 Q 57 88, 57 84 L 57 78 Z" fill="#DC2626" opacity="0.85" />
+  </g>
+
+  <!-- Volleyball / Sports Ball (Placed prominently in foreground) -->
+  <g transform="translate(62, 58)">
+    <!-- Ball Drop Shadow -->
+    <ellipse cx="0" cy="18" rx="16" ry="5" fill="#000000" opacity="0.4" />
+
+    <!-- Main Ball Sphere -->
+    <circle cx="0" cy="0" r="18" fill="url(#ballShade)" stroke="#334155" stroke-width="1.2" />
+
+    <!-- Volleyball Curved Panels (Distinct 3-strip pattern) -->
+    <!-- Top-left curved seam group -->
+    <path d="M -18 0 C -12 -10, 0 -14, 0 -18" fill="none" stroke="#2563EB" stroke-width="1.5" />
+    <path d="M -14 11 C -8 2, 2 -2, 10 -15" fill="none" stroke="#F59E0B" stroke-width="1.5" />
+
+    <!-- Bottom-right curved seam group -->
+    <path d="M 0 18 C 0 8, 12 4, 18 0" fill="none" stroke="#2563EB" stroke-width="1.5" />
+    <path d="M -11 14 C -2 10, 8 8, 14 -11" fill="none" stroke="#F59E0B" stroke-width="1.5" />
+
+    <!-- Third panel curving across -->
+    <path d="M -16 -8 C -4 -4, 4 4, 8 16" fill="none" stroke="#0F172A" stroke-width="1.2" />
+
+    <!-- Volleyball Color accent patches for high visibility -->
+    <path d="M -12 -12 Q -2 -14, 0 -18 C -7 -18, -13 -15, -17 -7 Q -15 -10, -12 -12 Z" fill="#2563EB" opacity="0.85" />
+    <path d="M 6 12 Q 12 8, 18 0 C 18 8, 14 15, 6 17 Z" fill="#F59E0B" opacity="0.85" />
+    <circle cx="-5" cy="-5" r="16" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.3" />
+  </g>
+
+  <!-- Small Cricket Seam Ball / Accent near bottom-left -->
+  <g transform="translate(24, 66)">
+    <circle cx="0" cy="0" r="8" fill="#DC2626" stroke="#991B1B" stroke-width="1" />
+    <!-- White Seam Stitches -->
+    <path d="M -7 -4 Q 0 0, 7 4" fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-dasharray="2,1" />
+    <!-- Shine -->
+    <circle cx="-2" cy="-3" r="2" fill="#FFFFFF" opacity="0.6" />
+  </g>
+
+  <!-- Golden Stars & Laurel Accent at Bottom -->
+  <g fill="url(#goldRim)">
+    <!-- Center star -->
+    <polygon points="50,86 51.5,90.5 56,90.5 52.5,93 54,97.5 50,95 46,97.5 47.5,93 44,90.5 48.5,90.5" />
+    <circle cx="38" cy="91" r="1.5" />
+    <circle cx="62" cy="91" r="1.5" />
+  </g>
+</svg>
