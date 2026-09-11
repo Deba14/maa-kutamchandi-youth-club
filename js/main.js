@@ -120,14 +120,11 @@ function initLightbox() {
   galleryItems.forEach(item => {
     item.addEventListener('click', () => {
       const img = item.querySelector('img');
-      const title = item.querySelector('h5')?.innerText || 'Festival Moment';
-      const subtitle = item.querySelector('span')?.innerText || '';
-
       if (img && lightboxImg) {
         lightboxImg.src = img.src;
-        lightboxImg.alt = title;
+        lightboxImg.alt = '';
         if (lightboxCaption) {
-          lightboxCaption.innerHTML = `<strong>${title}</strong> ${subtitle ? '• ' + subtitle : ''}`;
+          lightboxCaption.innerHTML = '';
         }
         lightboxModal.showModal();
       }
