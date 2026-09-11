@@ -122,9 +122,10 @@ function initLightbox() {
       const img = item.querySelector('img');
       if (img && lightboxImg) {
         lightboxImg.src = img.src;
-        lightboxImg.alt = '';
+        lightboxImg.alt = img.alt || '';
+        const title = item.querySelector('h5')?.innerText || '';
         if (lightboxCaption) {
-          lightboxCaption.innerHTML = '';
+          lightboxCaption.innerHTML = title ? `<strong>${title}</strong>` : '';
         }
         lightboxModal.showModal();
       }
