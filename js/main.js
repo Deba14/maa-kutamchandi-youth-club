@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initGalleryFilter();
   initLightbox();
   initModals();
+  initJoinMemberForm();
   initHeaderScroll();
   initMobileNav();
 });
@@ -298,3 +299,106 @@ function showToast(message) {
     toast.classList.remove('show');
   }, 4000);
 }
+
+/* --------------------------------------------------------------------------
+   11. JOIN AS MEMBER (PHOTO PREVIEW + WHATSAPP TRIGGER)
+   -------------------------------------------------------------------------- */
+function initJoinMemberForm() {
+  const form = document.getElementById('joinMemberForm');
+  const photoInput = document.getElementById('joinPhotoInput');
+  const dropzone = document.getElementById('joinPhotoDropzone');
+  const preview = document.getElementById('joinPhotoPreview');
+  const placeholder = document.getElementById('joinPhotoPlaceholder');
+  const statusTxt = document.getElementById('joinPhotoStatus');
+
+  if (!form) return;
+
+  if (dropzone && photoInput) {
+    dropzone.addEventListener('click', () => photoInput.click());
+  }
+  if (statusTxt && photoInput) {
+    statusTxt.addEventListener('click', () => photoInput.click());
+  }
+
+  if (photoInput && preview && placeholder) {
+    photoInput.addEventListener('change', (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (file) {
+        const objectUrl = URL.createObjectURL(file);
+        preview.src = objectUrl;
+        preview.style.display = 'block';
+        placeholder.style.display = 'none';
+        if (statusTxt) {
+          statusTxt.innerHTML = '✅ Photo selected! (Click to change)';
+          statusTxt.style.color = '#86EFAC';
+        }
+      }
+    });
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const nameInput = document.getElementById('joinFullName');
+    const phoneInput = document.getElementById('joinPhone');
+    const name = nameInput ? nameInput.value.trim() : '';
+    const phone = phoneInput ? phoneInput.value.trim() : '';
+    const file = photoInput && photoInput.files && photoInput.files[0];
+
+    if (!name || !phone) return;
+
+    const modal = document.getElementById('joinMemberModal');
+
+    // Formatted message text
+    const messageText = `🌸 *ମା' କୁତାମଚଣ୍ଡୀ ୟୁଥ୍ କ୍ଲବ୍, ସୁଧାନଗର* 🌸\n` +
+      `📋 *ନୂତନ ସଦସ୍ୟ ଯୋଗଦାନ (New Member Joining)*\n\n` +
+      `👤 *ନାମ (Name):* ${name}\n` +
+      `📞 *ଫୋନ୍ / WhatsApp:* ${phone}\n\n` +
+      (file ? `📸 *ଫଟୋ ସଂଲଗ୍ନ ହୋଇଛି (Member Photo Attached)*\n\n` : '') +
+      `ମୁଁ କ୍ଲବ୍ ସଦସ୍ୟ ଭାବେ ଯୋଗଦେବାକୁ ଚାହୁଁଛି । ଦୟାକରି ମୋର ଫଟୋ ଓ ନାମ ସଦସ୍ୟ ତାଲିକାରେ ଯୋଡ଼ନ୍ତୁ ।\n` +
+      `🌐 ୱେବସାଇଟ୍: https://deba14.github.io/maa-kutamchandi-youth-club/`;
+
+    // 1. Mobile Native Web Share API (Attaches photo + text directly into WhatsApp)
+    if (file && navigator.canShare) {
+      try {
+        if (navigator.canShare({ files: [file] })) {
+          await navigator.share({
+            title: `Maa Kutamchandi Youth Club - ${name}`,
+            text: messageText,
+            files: [file]
+          });
+          showToast('✅ Opened WhatsApp! Select the Club Group to send.');
+          if (modal) setTimeout(() => modal.close(), 1200);
+          return;
+        }
+      } catch (err) {
+        if (err.name === 'AbortError') return;
+        console.warn('Native file share failed, trying fallback:', err);
+      }
+    }
+
+    // 2. Native Web Share text only (if file sharing unsupported)
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: `Maa Kutamchandi Youth Club - ${name}`,
+          text: messageText
+        });
+        showToast('✅ Opened WhatsApp! Select the Club Group to send.');
+        if (modal) setTimeout(() => modal.close(), 1200);
+        return;
+      } catch (err) {
+        if (err.name === 'AbortError') return;
+      }
+    }
+
+    // 3. Fallback for Desktop (Opens WhatsApp share selector)
+    const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(messageText)}`;
+    window.open(whatsappUrl, '_blank');
+
+    showToast('Opening WhatsApp... Select the Club Group to send! (Attach photo in chat)');
+    if (modal) {
+      setTimeout(() => modal.close(), 1200);
+    }
+  });
+}
+

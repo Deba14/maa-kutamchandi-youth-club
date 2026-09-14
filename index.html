@@ -46,6 +46,9 @@
       </nav>
 
       <div class="nav-actions">
+        <button class="btn btn-gold" data-open-modal="joinMemberModal" style="padding: 0.45rem 1.15rem; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.4rem; border-radius: 9999px;">
+          <span>🤝 Join Club</span>
+        </button>
         <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">☰</button>
       </div>
     </div>
@@ -285,6 +288,29 @@
           <div class="member-role">Young Member (ଯୁବ ସଦସ୍ୟ)</div>
         </div>
       </div>
+
+      <!-- JOIN CLUB CTA BANNER -->
+      <div class="join-club-cta" style="margin-top: 3.5rem; background: rgba(13, 22, 44, 0.6); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(245, 158, 11, 0.35); border-radius: 20px; padding: 2.25rem 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.15);">
+        <div>
+          <div class="section-subtitle odia-text" style="margin-bottom: 0.4rem;">
+            ନୂତନ ସଦସ୍ୟ ସାମିଲ
+          </div>
+          <h3 style="font-size: 1.4rem; color: #FFFFFF; margin-bottom: 0.35rem;">
+            Want to Join as a Member? (କ୍ଲବ୍ ସଦସ୍ୟ ହେବାକୁ ଚାହାଁନ୍ତି କି?)
+          </h3>
+          <p class="odia-text" style="color: var(--color-text-muted); font-size: 0.95rem; margin: 0;">
+            ଆପଣଙ୍କ ନାମ ଓ ଫଟୋ ସହିତ ଆବେଦନ କରି ମା' କୁତାମଚଣ୍ଡୀ ୟୁଥ୍ କ୍ଲବ୍‌ରେ ଯୋଡ଼ି ହୁଅନ୍ତୁ ।
+          </p>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.85rem; flex-wrap: wrap;">
+          <button type="button" class="btn btn-gold" data-open-modal="joinMemberModal" style="padding: 0.85rem 1.65rem; font-size: 0.95rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.6rem; border-radius: 9999px;">
+            <span>🤝 Apply to Join (ସଦସ୍ୟ ହୁଅନ୍ତୁ)</span>
+          </button>
+          <a href="https://chat.whatsapp.com/BQn6sGGNs161QxxD6z1ky3?s=qt&p=a&mlu=4&ilr=4" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(37, 211, 102, 0.12); border: 1px solid rgba(37, 211, 102, 0.4); color: #86EFAC; font-size: 0.95rem; font-weight: 600; padding: 0.85rem 1.5rem; border-radius: 9999px; text-decoration: none; transition: all 0.25s ease;">
+            <span>💬 Join WhatsApp Group</span> ↗
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -371,7 +397,86 @@
         <span class="sub-txt odia-text">ଗ୍ରାମବାସୀଙ୍କୁ ଜଣାନ୍ତୁ</span>
       </span>
     </a>
-  </aside>
+  <!-- JOIN CLUB MODAL -->
+  <dialog id="joinMemberModal" class="join-modal">
+    <div class="modal-card" style="max-width: 480px; width: 92%; padding: 2.25rem 2rem; background: rgba(8, 14, 32, 0.96); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(245, 158, 11, 0.4); border-radius: 24px; box-shadow: 0 25px 60px -10px rgba(0,0,0,0.8), 0 0 35px rgba(245, 158, 11, 0.15); color: #FFF; position: relative; margin: auto;">
+      <button class="modal-close-btn" aria-label="Close join modal" style="position: absolute; top: 1.25rem; right: 1.25rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #FFF; width: 34px; height: 34px; border-radius: 50%; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s ease;">✕</button>
+
+      <div style="text-align: center; margin-bottom: 1.75rem;">
+        <div class="section-subtitle odia-text" style="font-size: 0.8rem; margin-bottom: 0.5rem; padding: 0.3rem 0.9rem;">
+          ମା' କୁତାମଚଣ୍ଡୀ ୟୁଥ୍ କ୍ଲବ୍
+        </div>
+        <h3 style="font-size: 1.45rem; color: #FFF; margin-bottom: 0.35rem;">
+          Share Photo & Name to Group
+        </h3>
+        <p class="odia-text" style="font-size: 0.92rem; color: var(--color-gold-light); margin: 0;">
+          ଆପଣଙ୍କ ଫଟୋ ଓ ନାମ ସହିତ ହ୍ୱାଟ୍ସଆପ୍ ଗ୍ରୁପ୍‌ରେ ଯୋଡ଼ି ହୁଅନ୍ତୁ
+        </p>
+      </div>
+
+      <form id="joinMemberForm">
+        <!-- Photo Selector & Preview -->
+        <div style="text-align: center; margin-bottom: 1.5rem;">
+          <label style="display: block; font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 0.6rem;">
+            Member Photo (ଫଟୋ ବାଛନ୍ତୁ)
+          </label>
+          <div id="joinPhotoDropzone" style="width: 105px; height: 105px; margin: 0 auto; border-radius: 50%; border: 2px dashed rgba(245, 158, 11, 0.5); background: rgba(255, 255, 255, 0.04); display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; position: relative; overflow: hidden; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+            <img id="joinPhotoPreview" src="" alt="Preview" style="display: none; width: 100%; height: 100%; object-fit: cover;">
+            <div id="joinPhotoPlaceholder" style="display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--color-gold-light); font-size: 0.75rem; text-align: center; padding: 0.5rem;">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-bottom: 0.2rem;">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                <circle cx="12" cy="13" r="4"/>
+              </svg>
+              <span>+ Add Photo</span>
+            </div>
+          </div>
+          <input type="file" id="joinPhotoInput" accept="image/*" style="display: none;">
+          <small id="joinPhotoStatus" style="display: block; font-size: 0.78rem; color: var(--color-gold-light); margin-top: 0.45rem; cursor: pointer;">Click circle to choose photo (ଫଟୋ ବାଛନ୍ତୁ)</small>
+        </div>
+
+        <!-- Full Name Field -->
+        <div style="margin-bottom: 1.25rem; text-align: left;">
+          <label for="joinFullName" style="display: block; font-size: 0.88rem; font-weight: 500; color: #FFF; margin-bottom: 0.4rem;">
+            Full Name (ଆପଣଙ୍କ ସମ୍ପୂର୍ଣ୍ଣ ନାମ) <span style="color: #EF4444;">*</span>
+          </label>
+          <input type="text" id="joinFullName" required placeholder="e.g. Rajesh Sahoo" style="width: 100%; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; padding: 0.8rem 1.15rem; color: #FFF; font-size: 0.95rem; outline: none; transition: border-color 0.3s ease;">
+        </div>
+
+        <!-- WhatsApp Phone Field -->
+        <div style="margin-bottom: 1.4rem; text-align: left;">
+          <label for="joinPhone" style="display: block; font-size: 0.88rem; font-weight: 500; color: #FFF; margin-bottom: 0.4rem;">
+            Phone / WhatsApp Number (ହ୍ୱାଟ୍ସଆପ୍ ନମ୍ବର) <span style="color: #EF4444;">*</span>
+          </label>
+          <input type="tel" id="joinPhone" required placeholder="e.g. 9876543210" style="width: 100%; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; padding: 0.8rem 1.15rem; color: #FFF; font-size: 0.95rem; outline: none; transition: border-color 0.3s ease;">
+        </div>
+
+        <!-- Info Notice -->
+        <div style="background: rgba(37, 211, 102, 0.1); border: 1px solid rgba(37, 211, 102, 0.25); border-radius: 12px; padding: 0.75rem 1rem; font-size: 0.82rem; color: #86EFAC; margin-bottom: 1.4rem; display: flex; align-items: flex-start; gap: 0.6rem; text-align: left;">
+          <span style="font-size: 1.1rem; line-height: 1;">💡</span>
+          <span><strong>Mobile Users:</strong> Tapping submit attaches your photo and details directly so you can share to the <strong>WhatsApp Group</strong> in 1 tap!<br><span style="color: var(--color-gold-light); font-size: 0.78rem;">(ମୋବାଇଲ୍‌ରେ ସିଧାସଳଖ ଫଟୋ ଓ ନାମ ଗ୍ରୁପ୍‌ରେ ସେୟାର ହେବ)</span></span>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" style="width: 100%; background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); color: #FFF; font-weight: 700; font-size: 1.02rem; padding: 0.9rem; border: none; border-radius: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.6rem; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); transition: transform 0.25s ease, box-shadow 0.25s ease;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.18-.48-.31z"/>
+          </svg>
+          <span>Share Photo & Name to Group</span>
+        </button>
+
+        <!-- Direct WhatsApp Group Link Option -->
+        <div style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center;">
+          <span style="font-size: 0.82rem; color: var(--color-text-muted); display: block; margin-bottom: 0.6rem;">Already a member or want to join the WhatsApp group directly?</span>
+          <a href="https://chat.whatsapp.com/BQn6sGGNs161QxxD6z1ky3?s=qt&p=a&mlu=4&ilr=4" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(37, 211, 102, 0.1); border: 1px solid rgba(37, 211, 102, 0.4); color: #86EFAC; font-size: 0.88rem; font-weight: 600; padding: 0.65rem 1.35rem; border-radius: 9999px; text-decoration: none; transition: all 0.25s ease;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.18-.48-.31z"/>
+            </svg>
+            <span>💬 Direct Join WhatsApp Group</span> ↗
+          </a>
+        </div>
+      </form>
+    </div>
+  </dialog>
 
   <!-- Scripts -->
   <script src="js/main.js"></script>
