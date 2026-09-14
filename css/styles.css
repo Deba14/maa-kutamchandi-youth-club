@@ -385,6 +385,20 @@ h1, h2, h3, h4 {
   gap: 1rem;
 }
 
+.join-nav-btn {
+  padding: 0.45rem 1.15rem;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.mobile-menu-cta {
+  display: none;
+}
+
 .mobile-nav-toggle {
   display: none;
   background: transparent;
@@ -1436,8 +1450,49 @@ dialog::backdrop {
     --nav-height: 68px;
   }
 
+  .site-header {
+    background: rgba(6, 11, 24, 0.95);
+  }
+
+  .brand-logo {
+    gap: 0.65rem;
+    min-width: 0;
+  }
+
+  .logo-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand-text h1.odia-title {
+    font-size: 1.12rem;
+    line-height: 1.2;
+  }
+
+  .brand-text span.odia-sub {
+    font-size: 0.65rem;
+    letter-spacing: 0.5px;
+    max-width: 210px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .join-nav-btn {
+    display: none !important;
+  }
+
+  .mobile-menu-cta {
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
   .mobile-nav-toggle {
     display: block;
+    flex-shrink: 0;
   }
 
   .nav-menu {
@@ -1590,8 +1645,39 @@ dialog::backdrop {
 
 @media (max-width: 640px) {
   .floating-whatsapp-wrap {
-    bottom: 1.25rem;
-    right: 1.25rem;
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .whatsapp-share-btn {
+    padding: 0.35rem 0.85rem 0.35rem 0.4rem;
+    gap: 0.5rem;
+  }
+
+  .whatsapp-icon-circle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .whatsapp-icon-circle svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .whatsapp-btn-text .main-txt {
+    font-size: 0.82rem;
+  }
+
+  .whatsapp-btn-text .sub-txt {
+    display: none;
+  }
+
+  dialog.join-modal {
+    padding: 0.5rem;
+  }
+
+  dialog.join-modal .modal-card {
+    padding: 1.75rem 1.25rem !important;
   }
 }
 

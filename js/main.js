@@ -210,9 +210,9 @@ function initMobileNav() {
     toggleBtn.innerHTML = isOpen ? '✕' : '☰';
   });
 
-  // Close nav on link click
-  navMenu.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
+  // Close nav on link or button click
+  navMenu.querySelectorAll('.nav-link, button').forEach(item => {
+    item.addEventListener('click', () => {
       navMenu.classList.remove('open');
       toggleBtn.innerHTML = '☰';
     });
