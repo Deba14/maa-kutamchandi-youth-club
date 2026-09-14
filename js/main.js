@@ -306,32 +306,27 @@ function showToast(message) {
 function initJoinMemberForm() {
   const form = document.getElementById('joinMemberForm');
   const photoInput = document.getElementById('joinPhotoInput');
-  const dropzone = document.getElementById('joinPhotoDropzone');
   const preview = document.getElementById('joinPhotoPreview');
   const placeholder = document.getElementById('joinPhotoPlaceholder');
   const statusTxt = document.getElementById('joinPhotoStatus');
 
   if (!form) return;
 
-  if (dropzone && photoInput) {
-    dropzone.addEventListener('click', () => photoInput.click());
-  }
-  if (statusTxt && photoInput) {
-    statusTxt.addEventListener('click', () => photoInput.click());
-  }
-
   if (photoInput && preview && placeholder) {
     photoInput.addEventListener('change', (e) => {
       const file = e.target.files && e.target.files[0];
       if (file) {
-        const objectUrl = URL.createObjectURL(file);
-        preview.src = objectUrl;
-        preview.style.display = 'block';
-        placeholder.style.display = 'none';
-        if (statusTxt) {
-          statusTxt.innerHTML = '✅ Photo selected! (Click to change)';
-          statusTxt.style.color = '#86EFAC';
-        }
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          preview.src = event.target.result;
+          preview.style.display = 'block';
+          placeholder.style.display = 'none';
+          if (statusTxt) {
+            statusTxt.innerHTML = '✅ Photo selected! (Tap to change)';
+            statusTxt.style.color = '#86EFAC';
+          }
+        };
+        reader.readAsDataURL(file);
       }
     });
   }
